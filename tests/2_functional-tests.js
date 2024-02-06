@@ -26,10 +26,10 @@ suite('Functional Tests', function () {
 			chai
 				.request(server)
 				.keepOpen()
-				.get('/hello?name=xy_z')
+				.get('/hello?name=Almer')
 				.end(function (err, res) {
 					assert.strictEqual(res.status, 200);
-					assert.strictEqual(res.text, 'hello xy_z');
+					assert.strictEqual(res.text, 'hello Almer');
 					done();
 				});
 		});
@@ -105,7 +105,7 @@ suite('Functional Tests with Zombie.js', function () {
 		});
 		// #6
 		test('Submit the surname "Vespucci" in the HTML form', function (done) {
-			browser.fill('surname', 'Colombo').then(() => {
+			browser.fill('surname', 'Vespucci').then(() => {
 				browser.pressButton('submit', () => {
 					browser.assert.success();
 					browser.assert.text('span#name', 'Amerigo');
