@@ -16,7 +16,7 @@ suite('Functional Tests', function () {
 				.keepOpen()
 				.get('/hello')
 				.end(function (err, res) {
-					assert.strictEqual(res.status, 200);
+					assert.equal(res.status, 200);
 					assert.equal(res.text, 'hello Guest');
 					done();
 				});
@@ -28,8 +28,8 @@ suite('Functional Tests', function () {
 				.keepOpen()
 				.get('/hello?name=Almer')
 				.end(function (err, res) {
-					assert.strictEqual(res.status, 200);
-					assert.strictEqual(res.text, 'hello Almer');
+					assert.equal(res.status, 200);
+					assert.equal(res.text, 'hello Almer');
 					done();
 				});
 		});
