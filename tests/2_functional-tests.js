@@ -43,8 +43,8 @@ suite('Functional Tests', function () {
 					surname: 'Colombo',
 				})
 				.end(function (err, res) {
-					assert.strictEqual(res.status, 200);
-					assert.strictEqual(res.type, 'application/json');
+					assert.equal(res.status, 200);
+					assert.equal(res.type, 'application/json');
 					assert.equal(res.body.name, 'Cristoforo');
 					assert.equal(res.body.surname, 'Colombo');
 
@@ -61,8 +61,8 @@ suite('Functional Tests', function () {
 					surname: 'da Verrazzano',
 				})
 				.end(function (err, res) {
-					assert.strictEqual(res.status, 200);
-					assert.strictEqual(res.type, 'application/json');
+					assert.equal(res.status, 200);
+					assert.equal(res.type, 'application/json');
 					assert.equal(res.body.name, 'Giovanni');
 					assert.equal(res.body.surname, 'da Verrazzano');
 
@@ -102,8 +102,6 @@ suite('Functional Tests with Zombie.js', function () {
 					done();
 				});
 			});
-
-			done();
 		});
 		// #6
 		test('Submit the surname "Vespucci" in the HTML form', function (done) {
@@ -116,8 +114,6 @@ suite('Functional Tests with Zombie.js', function () {
 					done();
 				});
 			});
-
-			done();
 		});
 	});
 });
